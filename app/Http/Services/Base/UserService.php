@@ -30,7 +30,7 @@ class UserService extends Service
             return [
                 'name' => $data['name'],
                 'email' => $data['email'],
-                'avatar' => $data['avatar'],
+                'avatar' => $data['picture'],
                 'provider' => $provider,
                 'provider_id' => $data['id'],
 //                'role' => $data['role'] ? $data['role'] : USER_ROLE,

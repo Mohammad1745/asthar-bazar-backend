@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("username", 80)->unique()->nullable();
             $table->string("provider_id")->nullable();
             $table->string("provider")->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

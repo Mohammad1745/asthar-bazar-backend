@@ -4,22 +4,22 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\Auth\SocialLoginRequest;
-use App\Http\Services\Feature\Auth\AuthService;
+use App\Http\Services\Feature\Auth\SocialAuthService;
 use Illuminate\Http\RedirectResponse as RedirectResponseAlias;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class SocialAuthController extends Controller
 {
     /**
-     * @var AuthService
+     * @var SocialAuthService
      */
     private $service;
 
     /**
      * AuthController constructor.
-     * @param AuthService $service
+     * @param SocialAuthService $service
      */
-    public function __construct (AuthService $service)
+    public function __construct (SocialAuthService $service)
     {
         $this->service = $service;
     }

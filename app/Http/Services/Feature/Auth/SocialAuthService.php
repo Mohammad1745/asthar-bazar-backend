@@ -8,7 +8,7 @@ use Illuminate\Http\RedirectResponse as RedirectResponseAlias;
 use Laravel\Socialite\Facades\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class AuthService extends ResponseService
+class SocialAuthService extends ResponseService
 {
     /**
      * @var UserService
@@ -43,12 +43,13 @@ class AuthService extends ResponseService
             $socialUser = Socialite::driver( $provider)->stateless()->user();
             $user = $this->userService->firstWhere(['email' => $socialUser->email]);
             $user
-                ? $this->userService->update( $user->id, $this->userService->formatUserDataForSocialLogin($socialUser['avatar'], $provider))
-                : $user = $this->userService->create( $this->userService->formatUserDataForSocialSignup($socialUser, $provider));
-
+                ? $this->userService->update( $user->id, $this->userService->formatUserDataForSocialLogin($socialUser->avatar, $provider))
+                : $user = $this->userService->create( $this->userService->formatUserDataForSocialSignup($socialUser->user, $provider));
             $authorization = $this->_authorize( $user);
+
             return CLIENT_URL.'/redirect?authorization=' . (json_encode( $authorization));
         } catch (\Exception $exception) {
+
             return CLIENT_URL.'/redirect';
         }
     }
@@ -60,7 +61,7 @@ class AuthService extends ResponseService
     private function _authorize (object $user): array
     {
         return [
-            'token' =>  $user->createToken('Invatator')->accessToken,
+            'token' =>  $user->createToken('Asthar Bazar')->accessToken,
             'token_type' =>  'bearer',
             'user' => [
                 'name' => $user->name,
