@@ -14,29 +14,31 @@ directories = (
     'app/Http/Services',
     'app/Http/Services/Base',
     'app/Http/Services/Feature',
-    'app/Http/Services/Feature/Auth'
+    'app/Http/Services/Feature/Auth',
+    'routes/web'
 )
 for dir in directories:
     if not os.path.exists(dir):
         os.mkdir(dir)
 
 files = (
-    '/Helpers/coreConstants',
-    '/Helpers/helper',
-    '/Http/Controllers/Web/SocialAuthController',
-    '/Http/Repositories/Repository',
-    '/Http/Repositories/UserRepository',
-    '/Http/Requests/Request',
-    '/Http/Requests/Web/Auth/SocialLoginRequest',
-    '/Http/Services/Service',
-    '/Http/Services/ResponseService',
-    '/Http/Services/Base/UserService',
-    '/Http/Services/Feature/Auth/SocialAuthService'
+    'app/Helpers/coreConstants',
+    'app/Helpers/helper',
+    'app/Http/Controllers/Web/SocialAuthController',
+    'app/Http/Repositories/Repository',
+    'app/Http/Repositories/UserRepository',
+    'app/Http/Requests/Request',
+    'app/Http/Requests/Web/Auth/SocialLoginRequest',
+    'app/Http/Services/Service',
+    'app/Http/Services/ResponseService',
+    'app/Http/Services/Base/UserService',
+    'app/Http/Services/Feature/Auth/SocialAuthService',
+    'routes/web/auth'
 )
 for file in files:
-    if not os.path.exists('app'+file+'.php'):
-        src_file = open('setup'+file+'.txt', 'r')
-        f = open('app'+file+'.php', 'w+')
+    if not os.path.exists(file+'.php'):
+        src_file = open('setup/'+file+'.txt', 'r')
+        f = open(file+'.php', 'w+')
         f.write(src_file.read())
         f.close()
 
