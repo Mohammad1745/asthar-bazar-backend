@@ -3,28 +3,40 @@
 import os
 import shutil
 
-os.mkdir('app/Http/Requests')
-os.mkdir('app/Http/Repositories')
-os.mkdir('app/Http/Services')
-os.mkdir('app/Http/Services/Base')
-os.mkdir('app/Http/Services/Feature')
+directories = (
+    'app/Helpers',
+    'app/Http/Controllers/Web',
+    'app/Http/Repositories',
+    'app/Http/Requests',
+    'app/Http/Requests/Web',
+    'app/Http/Requests/Web/Auth',
+    'app/Http/Services',
+    'app/Http/Services/Base',
+    'app/Http/Services/Feature',
+    'app/Http/Services/Feature/Auth'
+)
 
-src_file = open('setup/Requests/Request.php', 'r')
-f = open('app/Http/Requests/Request.php', 'w+')
-f.write(src_file.read())
-f.close()
+for dir in directories:
+    if not os.path.exists(dir):
+        os.mkdir(dir)
 
-src_file = open('setup/Repositories/Repository.php', 'r')
-f = open('app/Http/Repositories/Repository.php', 'w+')
-f.write(src_file.read())
-f.close()
+files = (
+    '/Helpers/coreConstants',
+    '/Helpers/helper',
+    '/Http/Controllers/Web/SocialAuthController',
+    '/Http/Repositories/Repository',
+    '/Http/Repositories/UserRepository',
+    '/Http/Requests/Request',
+    '/Http/Requests/Web/Auth/SocialLoginRequest',
+    '/Http/Services/Service',
+    '/Http/Services/ResponseService',
+    '/Http/Services/Base/UserService',
+    '/Http/Services/Feature/Auth/SocialAuthService'
+)
 
-src_file = open('setup/Services/Service.php', 'r')
-f = open('app/Http/Services/Service.php', 'w+')
-f.write(src_file.read())
-f.close()
-
-src_file = open('setup/Services/ResponseService.php', 'r')
-f = open('app/Http/Services/ResponseService.php', 'w+')
-f.write(src_file.read())
-f.close()
+for file in files:
+    if not os.path.exists('app'+file+'.php'):
+        src_file = open('setup'+file+'.txt', 'r')
+        f = open('app'+file+'.php', 'w+')
+        f.write(src_file.read())
+        f.close()
