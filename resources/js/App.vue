@@ -1,18 +1,20 @@
 <template>
-<!--    <div class="container">-->
-<!--        <div>-->
-<!--            <transition name="fade">-->
-<!--                <router-view></router-view>-->
-<!--            </transition>-->
-<!--        </div>-->
-<!--    </div>-->
-    <default-layout>
-        <template v-slot:main>
-            <transition name="fade">-->
-                <router-view></router-view>
-            </transition>
-        </template>
-    </default-layout>
+    <div>
+        <default-layout v-if="true">
+            <template v-slot:main>
+                <transition name="fade">-->
+                    <router-view></router-view>
+                </transition>
+            </template>
+        </default-layout>
+        <user-layout v-if="false">
+            <template v-slot:main>
+                <transition name="fade">-->
+                    <router-view></router-view>
+                </transition>
+            </template>
+        </user-layout>
+    </div>
 </template>
 
 <script>

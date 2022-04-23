@@ -26,7 +26,7 @@
     data() {
       return {
         menus: [
-          {page: "/", title: "HOME"},
+          // {page: "/", title: "HOME"},
           {page: "/signin", title: "SIGN IN"},
         ]
       }
