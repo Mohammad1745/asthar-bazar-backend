@@ -1,9 +1,12 @@
-import Example from "../components/ExampleComponent";
+import Example from "../views/signin";
 
 export const routes = [
     {
-        name: 'Example',
+        name: 'Sign In',
         path: '/',
-        component: Example
+        component: Example,
+        meta: {
+            title: 'Admin Sign In - Asthar Bazar - Promises 100% Reliance'
+        }
     }
 ]
