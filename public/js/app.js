@@ -4017,7 +4017,7 @@ var render = function () {
                     "li",
                     { key: menu.page, staticClass: "nav-item" },
                     [
-                      _c("NuxtLink", { attrs: { to: menu.page } }, [
+                      _c("router-link", { attrs: { to: menu.page } }, [
                         _c(
                           "span",
                           {

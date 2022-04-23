@@ -10,11 +10,11 @@
         v-for="menu in menus"
         :key="menu.page"
         class="nav-item">
-        <NuxtLink :to="menu.page">
+        <router-link :to="menu.page">
           <span class="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
             {{ menu.title }}
           </span>
-        </NuxtLink>
+        </router-link>
       </li>
     </ul>
   </div>
