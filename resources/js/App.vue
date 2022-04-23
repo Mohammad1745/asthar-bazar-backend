@@ -1,16 +1,27 @@
 <template>
-    <div class="container">
-        <div>
-            <transition name="fade">
+<!--    <div class="container">-->
+<!--        <div>-->
+<!--            <transition name="fade">-->
+<!--                <router-view></router-view>-->
+<!--            </transition>-->
+<!--        </div>-->
+<!--    </div>-->
+    <default-layout>
+        <template v-slot:main>
+            <transition name="fade">-->
                 <router-view></router-view>
             </transition>
-        </div>
-    </div>
+        </template>
+    </default-layout>
 </template>
 
 <script>
+import DefaultLayout from './layouts/default'
+import UserLayout from "./layouts/user";
+
 export default {
-    name: "App.vue"
+    name: "App.vue",
+    components: {DefaultLayout, UserLayout}
 }
 </script>
 

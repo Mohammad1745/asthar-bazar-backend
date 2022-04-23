@@ -25,4 +25,9 @@ Vue.use(VueAxios, axios);
 import App from './App.vue'
 import {routes} from "./router";
 const router = new VueRouter({mode: 'history', routes});
+router.beforeEach((toRoute, fromRoute, next) => {
+    window.document.title = toRoute.meta && toRoute.meta.title ? toRoute.meta.title : 'Admin - Asthar Bazar';
+
+    next();
+})
 new Vue(Vue.util.extend({router}, App)).$mount('#app')
