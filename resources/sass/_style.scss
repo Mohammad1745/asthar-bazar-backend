@@ -1,0 +1,60 @@
+body {
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: #414141;
+}
+input[type="text"]{
+    height: 4rem;
+    padding: 0 1.5rem;
+    transition: 0.15s;
+}
+input:hover,
+input:focus{
+    outline: none;
+    border-bottom: 4px solid #bbe432;
+}
+input[type="radio"]:hover,
+input[type="radio"]:focus{
+    outline: none;
+    border: 4px solid #bbe432;
+}
+.bg-dark {
+    background-color: #1a1a1a;
+}
+.bg-semidark {
+    background-color: #343a40;
+}
+.bg-green {
+    background: #bbe432;
+    color: #414141;
+    transition: 0.15s;
+}
+.bg-green:hover {
+    background: #414141;
+    color: #bbe432;
+}
+.bg-green-inverted {
+    background: #414141;
+    color: #fff;
+    transition: 0.15s;
+}
+.bg-green-inverted:hover {
+    background: #bbe432;
+    color: #414141;
+}
+.text-green {
+    color: #bbe432;
+}
+.form {
+    background-color: #edf4f6;
+}
+
+.z-1{z-index: 1;}
+.z-2{z-index: 2;}
+.z-3{z-index: 3;}
+.z-4{z-index: 4;}
+.z-5{z-index: 5;}
+.z-6{z-index: 6;}
+.z-7{z-index: 7;}
